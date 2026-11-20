@@ -1,0 +1,318 @@
+{
+  "equipes": [
+    {
+      "id": 1,
+      "nom": "Lions FC",
+      "joueurs": [
+        {
+          "id": 1,
+          "nom": "Diallo",
+          "numero": 1,
+          "poste": "Gardien"
+        },
+        {
+          "id": 2,
+          "nom": "Martin",
+          "numero": 4,
+          "poste": "Défenseur"
+        },
+        {
+          "id": 3,
+          "nom": "Bernard",
+          "numero": 6,
+          "poste": "Milieu"
+        },
+        {
+          "id": 4,
+          "nom": "Petit",
+          "numero": 9,
+          "poste": "Attaquant"
+        },
+        {
+          "id": 5,
+          "nom": "Durand",
+          "numero": 10,
+          "poste": "Attaquant"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nom": "Aigles United",
+      "joueurs": [
+        {
+          "id": 6,
+          "nom": "Leroy",
+          "numero": 1,
+          "poste": "Gardien"
+        },
+        {
+          "id": 7,
+          "nom": "Moreau",
+          "numero": 5,
+          "poste": "Défenseur"
+        },
+        {
+          "id": 8,
+          "nom": "Simon",
+          "numero": 8,
+          "poste": "Milieu"
+        },
+        {
+          "id": 9,
+          "nom": "Laurent",
+          "numero": 11,
+          "poste": "Attaquant"
+        },
+        {
+          "id": 10,
+          "nom": "Roux",
+          "numero": 7,
+          "poste": "Ailier"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nom": "Tigres SC",
+      "joueurs": [
+        {
+          "id": 11,
+          "nom": "Garnier",
+          "numero": 1,
+          "poste": "Gardien"
+        },
+        {
+          "id": 12,
+          "nom": "Faure",
+          "numero": 3,
+          "poste": "Défenseur"
+        },
+        {
+          "id": 13,
+          "nom": "Girard",
+          "numero": 6,
+          "poste": "Milieu"
+        },
+        {
+          "id": 14,
+          "nom": "Andre",
+          "numero": 9,
+          "poste": "Attaquant"
+        },
+        {
+          "id": 15,
+          "nom": "Mercier",
+          "numero": 10,
+          "poste": "Attaquant"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nom": "Ours RFC",
+      "joueurs": [
+        {
+          "id": 16,
+          "nom": "Blanc",
+          "numero": 1,
+          "poste": "Gardien"
+        },
+        {
+          "id": 17,
+          "nom": "Guerin",
+          "numero": 2,
+          "poste": "Défenseur"
+        },
+        {
+          "id": 18,
+          "nom": "Boyer",
+          "numero": 6,
+          "poste": "Milieu"
+        },
+        {
+          "id": 19,
+          "nom": "Chevalier",
+          "numero": 7,
+          "poste": "Ailier"
+        },
+        {
+          "id": 20,
+          "nom": "Francois",
+          "numero": 9,
+          "poste": "Attaquant"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nom": "PLUG UNIQ",
+      "joueurs": [
+        {
+          "id": 21,
+          "nom": "PAOLO",
+          "numero": 7,
+          "poste": "Attaquant"
+        }
+      ]
+    }
+  ],
+  "matchs": [
+    {
+      "id": 1,
+      "equipe_a_id": 2,
+      "equipe_b_id": 5,
+      "buts_a": 1,
+      "buts_b": 1,
+      "creneau": 1,
+      "joue": true
+    },
+    {
+      "id": 2,
+      "equipe_a_id": 3,
+      "equipe_b_id": 4,
+      "buts_a": 2,
+      "buts_b": 0,
+      "creneau": 1,
+      "joue": true
+    },
+    {
+      "id": 3,
+      "equipe_a_id": 1,
+      "equipe_b_id": 5,
+      "buts_a": 2,
+      "buts_b": 1,
+      "creneau": 2,
+      "joue": true
+    },
+    {
+      "id": 4,
+      "equipe_a_id": 2,
+      "equipe_b_id": 3,
+      "buts_a": 3,
+      "buts_b": 2,
+      "creneau": 2,
+      "joue": true
+    },
+    {
+      "id": 5,
+      "equipe_a_id": 1,
+      "equipe_b_id": 4,
+      "buts_a": 0,
+      "buts_b": 0,
+      "creneau": 3,
+      "joue": true
+    },
+    {
+      "id": 6,
+      "equipe_a_id": 5,
+      "equipe_b_id": 3,
+      "buts_a": 10,
+      "buts_b": 1,
+      "creneau": 3,
+      "joue": true
+    },
+    {
+      "id": 7,
+      "equipe_a_id": 1,
+      "equipe_b_id": 3,
+      "buts_a": 3,
+      "buts_b": 2,
+      "creneau": 4,
+      "joue": true
+    },
+    {
+      "id": 8,
+      "equipe_a_id": 4,
+      "equipe_b_id": 2,
+      "buts_a": 1,
+      "buts_b": 1,
+      "creneau": 4,
+      "joue": true
+    },
+    {
+      "id": 9,
+      "equipe_a_id": 1,
+      "equipe_b_id": 2,
+      "buts_a": 1,
+      "buts_b": 5,
+      "creneau": 5,
+      "joue": true
+    },
+    {
+      "id": 10,
+      "equipe_a_id": 4,
+      "equipe_b_id": 5,
+      "buts_a": 1,
+      "buts_b": 3,
+      "creneau": 5,
+      "joue": true
+    }
+  ],
+  "historique": [
+    {
+      "date": "2026-11-19T14:41:31",
+      "action": "Inscription équipe 'PLUG UNIQ' (id=5)"
+    },
+    {
+      "date": "2026-11-19T14:41:43",
+      "action": "Ajout joueur 'PAOLO' #7 à PLUG UNIQ"
+    },
+    {
+      "date": "2026-11-19T14:45:33",
+      "action": "Génération calendrier : 10 matchs"
+    },
+    {
+      "date": "2026-11-19T14:47:02",
+      "action": "Score match#1 : (None, None) -> (1-1)"
+    },
+    {
+      "date": "2026-11-19T14:47:14",
+      "action": "Score match#2 : (None, None) -> (2-0)"
+    },
+    {
+      "date": "2026-11-19T14:47:22",
+      "action": "Score match#3 : (None, None) -> (2-1)"
+    },
+    {
+      "date": "2026-11-19T14:47:33",
+      "action": "Score match#3 : (2, 1) -> (2-1)"
+    },
+    {
+      "date": "2026-11-19T14:47:44",
+      "action": "Score match#4 : (None, None) -> (7-2)"
+    },
+    {
+      "date": "2026-11-19T14:47:52",
+      "action": "Score match#5 : (None, None) -> (0-0)"
+    },
+    {
+      "date": "2026-11-19T14:48:01",
+      "action": "Score match#6 : (None, None) -> (10-1)"
+    },
+    {
+      "date": "2026-11-19T14:48:12",
+      "action": "Score match#7 : (None, None) -> (3-2)"
+    },
+    {
+      "date": "2026-11-19T14:48:18",
+      "action": "Score match#8 : (None, None) -> (1-1)"
+    },
+    {
+      "date": "2026-11-19T14:48:26",
+      "action": "Score match#9 : (None, None) -> (1-5)"
+    },
+    {
+      "date": "2026-11-19T14:48:36",
+      "action": "Score match#4 : (7, 2) -> (7-2)"
+    },
+    {
+      "date": "2026-11-19T14:48:44",
+      "action": "Score match#10 : (None, None) -> (1-3)"
+    },
+    {
+      "date": "2026-11-19T14:59:24",
+      "action": "Correction match#4 : (7, 2) -> (3-2)"
+    }
+  ]
+}
