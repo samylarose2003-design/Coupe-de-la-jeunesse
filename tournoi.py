@@ -61,8 +61,6 @@ class Tournoi:
         equipe = self._trouver_equipe(equipe_id)
         if not equipe:
             raise ValueError("Équipe introuvable.")
-        # On crée le joueur seulement si l'ajout est autorisé
-        # (vérification préalable pour ne pas consommer d'id en cas d'échec)
         if len(equipe.joueurs) >= Equipe.MAX_JOUEURS:
             raise ValueError(f"Effectif maximum atteint ({Equipe.MAX_JOUEURS}).")
         if any(j.numero == int(numero) for j in equipe.joueurs):
@@ -95,7 +93,7 @@ class Tournoi:
         matchs_par_round = n // 2
         nouveaux_matchs = []
 
-        Match._next_id = 1   # ✅ IDs repartent de 1
+        Match._next_id = 1   
 
         indices = list(range(n))
         for r in range(nb_rounds):
@@ -103,13 +101,12 @@ class Tournoi:
             for i in range(matchs_par_round):
                 a = indices[i]
                 b = indices[n - 1 - i]
-                eq_a = equipes[a]        # ✅ on récupère l'équipe
+                eq_a = equipes[a]        
                 eq_b = equipes[b]
-                if eq_a is None or eq_b is None:   # ✅ on teste l'équipe
+                if eq_a is None or eq_b is None:  
                     continue
                 m = Match(eq_a.id, eq_b.id, creneau=creneau)
                 nouveaux_matchs.append(m)
-            # rotation : fixe le 1er, tourne les autres
             indices = [indices[0]] + [indices[-1]] + indices[1:-1]
 
         anciens_joues = nb_joues

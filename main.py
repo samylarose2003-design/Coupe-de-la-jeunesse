@@ -39,7 +39,7 @@ def demander_int(msg):
         try:
             return int(input(msg))
         except ValueError:
-            print("  ❌ Entrée invalide, entrez un nombre entier.")
+            print("Entrée invalide, entrez un nombre entier.")
 
 
 def menu_equipes(tournoi):
@@ -48,7 +48,7 @@ def menu_equipes(tournoi):
         print("Aucune équipe inscrite.")
         return
     for e in tournoi.equipes:
-        etat = "✅" if e.effectif_valide() else "⚠"
+        etat = "if e.effectif_valide() else "
         print(f" [{e.id}] {etat} {e.nom} — {len(e.joueurs)} joueurs")
         for j in e.joueurs:
             poste = f" ({j.poste})" if j.poste else ""
@@ -112,7 +112,7 @@ def menu_stats_equipe(tournoi):
     eid = demander_int("ID équipe : ")
     equipe = tournoi._trouver_equipe(eid)
     if not equipe:
-        print("❌ Équipe introuvable.")
+        print(" Équipe introuvable.")
         return
     classement, _ = tournoi.calculer_classement()
     stats = next((c for c in classement if c["equipe"].id == eid), None)
@@ -150,7 +150,7 @@ def main():
 
                 nom = input("Nom de l'équipe : ")
                 eq = tournoi.inscrire_equipe(nom)
-                print(f"✅ Équipe '{eq.nom}' inscrite (id={eq.id}) avec succes.")
+                print(f" Équipe '{eq.nom}' inscrite (id={eq.id}) avec succes.")
                 print("Appuyez sur ENTER pour continuer")
                 input()
                 print("\033[H\033[J", end="")
@@ -162,7 +162,7 @@ def main():
                 print("=" * 55)
 
                 if not tournoi.equipes:
-                    print("❌ Inscrivez d'abord une équipe.")
+                    print(" Inscrivez d'abord une équipe.")
                     continue
                 for e in tournoi.equipes:
                     print(f"  [{e.id}] {e.nom}")
@@ -181,7 +181,7 @@ def main():
                 elif poste == 4:
                     poste = "Attaquant"
                 j = tournoi.ajouter_joueur(eid, nom, num, poste)
-                print(f"✅ Joueur {j.nom} ajouté.")
+                print(f"Joueur {j.nom} ajouté.")
                 print("Appuyez sur ENTER pour continuer")
                 input()
 
@@ -195,7 +195,7 @@ def main():
             elif choix == "4":
                 if tournoi.matchs:
                     nb_joues = sum(1 for m in tournoi.matchs if m.joue)
-                    print(f"\n⚠ Un calendrier existe ({len(tournoi.matchs)} matchs, "
+                    print(f"\n Un calendrier existe ({len(tournoi.matchs)} matchs, "
                         f"{nb_joues} joués).")
                     print("  Régénérer va EFFACER tous les matchs et tous les scores.")
                     rep = input("  Confirmer la régénération ? (o/n) : ").strip().lower()
@@ -203,7 +203,7 @@ def main():
                         print("Régénération annulée.")
                         continue
                 tournoi.generer_calendrier(forcer=True)
-                print(f"✅ {len(tournoi.matchs)} matchs générés (scores réinitialisés).")
+                print(f" {len(tournoi.matchs)} matchs générés (scores réinitialisés).")
                 print("Appuyez sur ENTER pour continuer")
                 input()
 
@@ -221,7 +221,7 @@ def main():
                 print("=" * 55)
 
                 if not tournoi.matchs:
-                    print("❌ Générez d'abord le calendrier.")
+                    print(" Générez d'abord le calendrier.")
                     continue
 
                 # Affichage initial de tous les matchs
@@ -242,7 +242,7 @@ def main():
 
                     match_choisi = tournoi._trouver_match(mid)
                     if not match_choisi:
-                        print(f"❌ Aucun match avec l'ID {mid}. Réessayez.")
+                        print(f" Aucun match avec l'ID {mid}. Réessayez.")
                         continue
 
                     eq_a = tournoi._trouver_equipe(match_choisi.equipe_a_id)
@@ -256,7 +256,7 @@ def main():
                     bb = demander_int(f"Nombre de buts de {eq_b.nom} : ")
 
                     tournoi.enregistrer_score(mid, ba, bb)
-                    print(f"✅ Score enregistré : {eq_a.nom} [{ba} - {bb}] {eq_b.nom}")
+                    print(f"Score enregistré : {eq_a.nom} [{ba} - {bb}] {eq_b.nom}")
 
                     # ✅ On redemande explicitement après CHAQUE saisie
                     rep = input("Saisir un autre score ? (o/n) : ").strip().lower()
@@ -270,7 +270,7 @@ def main():
                     
             elif choix == "7":
                 if not tournoi.matchs:
-                    print("❌ Aucun match.")
+                    print(" Aucun match.")
                     continue
 
                 menu_calendrier(tournoi)
@@ -280,13 +280,13 @@ def main():
                 # ✅ On récupère le match choisi
                 match_choisi = tournoi._trouver_match(mid)
                 if not match_choisi:
-                    print(f"❌ Aucun match avec l'ID {mid}.")
+                    print(f" Aucun match avec l'ID {mid}.")
                     print("Appuyez sur ENTER pour continuer")
                     input()
                     continue
 
                 if not match_choisi.joue:
-                    print(f"❌ Le match#{mid} n'a pas encore de score. Utilisez le menu 6.")
+                    print(f" Le match#{mid} n'a pas encore de score. Utilisez le menu 6.")
                     print("Appuyez sur ENTER pour continuer")
                     input()
                     continue
@@ -302,7 +302,7 @@ def main():
                 bb = demander_int(f"Nouveaux buts {eq_b.nom} : ")
 
                 tournoi.corriger_score(mid, ba, bb)
-                print(f"✅ Score corrigé : {eq_a.nom} [{ba} - {bb}] {eq_b.nom}")
+                print(f" Score corrigé : {eq_a.nom} [{ba} - {bb}] {eq_b.nom}")
 
                 print("Appuyez sur ENTER pour continuer")
                 input()
@@ -373,10 +373,10 @@ def main():
                 sys.exit(0)
 
             else:
-                print("❌ Choix invalide.")
+                print(" Choix invalide.")
 
         except ValueError as e:
-            print(f"❌ Opération refusée : {e}")
+            print(f" Opération refusée : {e}")
         
             print("Appuyez sur ENTER pour continuer")
             input()

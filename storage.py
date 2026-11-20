@@ -19,18 +19,17 @@ class Storage:
             with open(self.chemin, "r", encoding="utf-8") as f:
                 data = json.load(f)
         except (json.JSONDecodeError, OSError) as e:
-            # Ne jamais écraser un fichier invalide : on le sauvegarde
             backup = f"{self.chemin}.corrompu.{datetime.now():%Y%m%d_%H%M%S}"
             try:
                 shutil.copy(self.chemin, backup)
-                print(f"⚠ Fichier invalide. Copie de secours : {backup}")
+                print(f" Fichier invalide. Copie de secours : {backup}")
             except OSError:
-                print("⚠ Fichier invalide et copie impossible.")
+                print("Fichier invalide et copie impossible.")
             return {"equipes": [], "matchs": [], "historique": []}
 
         # Validation structurelle
         if not isinstance(data, dict):
-            print("⚠ Structure JSON invalide. Réinitialisation en mémoire.")
+            print("Structure JSON invalide. Réinitialisation en mémoire.")
             return {"equipes": [], "matchs": [], "historique": []}
 
         equipes = []
@@ -38,14 +37,14 @@ class Storage:
             try:
                 equipes.append(Equipe.from_dict(d))
             except (KeyError, ValueError) as e:
-                print(f"⚠ Équipe ignorée (données invalides) : {e}")
+                print(f" Équipe ignorée (données invalides) : {e}")
 
         matchs = []
         for d in data.get("matchs", []):
             try:
                 matchs.append(Match.from_dict(d))
             except (KeyError, ValueError) as e:
-                print(f"⚠ Match ignoré (données invalides) : {e}")
+                print(f" Match ignoré (données invalides) : {e}")
 
         return {
             "equipes": equipes,
